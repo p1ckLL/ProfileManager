@@ -69,9 +69,7 @@ function PickleStore:LoadPlayerProfile(plr)
 	
 	local profile = ProfileStores["Player"]:LoadProfileAsync(
 		key,
-		function(place_id, game_job_id)
-			return "Repeat" or "Cancel" or "ForceLoad" or "Steal"
-		end
+		"ForceLoad"
 	)
 	
 	local setupSuccess = PickleStore:SetupProfile(profile, key)
@@ -86,9 +84,7 @@ end
 function PickleStore:LoadCustomProfile(profileName, key)
 	local profile = ProfileStores["Custom"]:LoadProfileAsync(
 		key,
-		function(place_id, game_job_id)
-			return "Repeat" or "Cancel" or "ForceLoad" or "Steal"
-		end
+		"ForceLoad"
 	)
 	
 	local setupSuccess = PickleStore:SetupProfile(profile, key)
